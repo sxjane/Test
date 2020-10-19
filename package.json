@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "server": "nodemon ./server/server.js",
     "client": "webpack --mode development --watch --watch-aggregate-timeout 100 --watch-poll 1000",
-    "flow": "flow"
+    "start": "node ./server/server.js"
   },
   "author": "Xiaojie Si",
   "license": "ISC",
