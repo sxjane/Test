@@ -19,8 +19,10 @@ export default class ThemeApp extends React.Component{
         return(
             <ThemeContext.Provider value={this.themeStore}>
                 <Router>
-                    <Link to='/first'>First Button</Link>
-                    <Link to='/second'>Second Button</Link>
+                    <nav>
+                        <Link to='/first'>First Button</Link>
+                        <Link to='/second'>Second Button</Link>
+                    </nav>
                     <Switch>
                         <Route path='/first'>
                             <ThemeButton />
@@ -66,8 +68,9 @@ class ToggleButton extends React.Component{
                     </label>
                     <input type='submit' value='submit'/>
                 </form>
-                {/* <button style={{background: this.theme.background}} onClick={()=>this.theme.changeBackground('red')}>Change Color</button> */}
-                <button style={{background: this.theme.background}}>ThemedButton</button>
+                <div>
+                    <button style={{background: this.theme.background}}>ThemedButton</button>
+                </div>
             </div>
         )
     }
@@ -83,45 +86,3 @@ class AnotherButton extends React.Component{
     }
 }
 AnotherButton.contextType = ThemeContext
-
-
-// for context example from React website  
-//import React from 'react'
-// import {ThemeContext, themes} from './theme-context'
-// import ThemeTogglerButton from './theme-toggler-button'
-
-// export default class ThemeApp extends React.Component{
-//     constructor(props){
-//         super(props)
-//         this.toggleTheme = ()=>{
-//             this.setState(
-//                 state => ({
-//                     theme:
-//                     state.theme === themes.dark? themes.light : themes.dark
-//                 })
-//             )
-//         }
-//         this.state={
-//             theme: themes.light,
-//             toggleTheme: this.toggleTheme
-//         }
-//     }
-
-//     render(){
-//         return (
-//             <div>
-//                 <ThemeContext.Provider value={this.state}>
-//                    <Content />
-//                 </ThemeContext.Provider>
-//             </div>
-//         )
-//     }
-// }
-
-// function Content(){
-//     return (
-//         <div>
-//             <ThemeTogglerButton />
-//         </div>
-//     )
-// }
