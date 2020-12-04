@@ -7,3 +7,5 @@ Mobx branch: create the global state using mobx and use React.context to control
 Thressjs branch: use React and Three.js together 
 
 Mongodb branch: use Docker to run mongodb and nodejs connect to it 
+
+Docker branch: create/run docker image 
