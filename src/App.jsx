@@ -12,5 +12,4 @@ export default class App extends React.Component{
         }
         return <Canvas draw = {draw} />
     }
-
 }
