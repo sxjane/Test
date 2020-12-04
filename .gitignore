@@ -1,4 +1,3 @@
 node_modules
 /build
 /mongodata
-package-lock.json
