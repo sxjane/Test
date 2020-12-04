@@ -25,4 +25,4 @@ const useCanvas = (draw, options={}) => {
     return canvasRef
 }
 
-export default useCanvas
+export default useCanv
