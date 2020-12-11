@@ -1,11 +1,14 @@
 const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
+const fs = require('fs')
+const util = require('util')
 
 const app = express()
 const port = 3000
 const indexFile = path.join(__dirname, '../build/index.html')
 const PUBLIC_DIR = path.join(__dirname, '../build')
+const jsonFile = path.join(__dirname, '/data.json')
 
 app.use(morgan('dev'))
 app.use(express.static(PUBLIC_DIR))
@@ -25,6 +28,33 @@ app.post('/test-page', (req, res) =>{
     console.log('test-page:',params)
 })
 
+app.get('/products', (req, res)=>{
+    fs.readFile(jsonFile, (err,data)=>{
+        if(err) throw err
+        let obj = JSON.parse(data)
+        res.send(obj)
+    })
+})
+
 app.listen(port, ()=>{
     console.log(`App listening at http://localhost:${port}`)
 })
+
+class Dog{
+    constructor(){
+        this.word = 'Woof'
+        this.bark = this.bark.bind(this)
+    }
+    bark(){
+        return this.word
+    }
+}
+let cat = {
+    word: 'Meow'
+}
+
+let dog = new Dog()
+let freebark = dog.bark
+console.log(freebark())
+
+
