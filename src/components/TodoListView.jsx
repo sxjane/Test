@@ -1,6 +1,6 @@
 import React from 'react'
 import {observer} from 'mobx-react'
-import {TodoListContext} from './todoContext'
+import {TodoListContext} from '../todoContext'
 
 @observer
 export default class TodoListView extends React.Component{

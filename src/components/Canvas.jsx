@@ -1,5 +1,5 @@
 import React from 'react'
-import useCanvas from './useCanvas'
+import useCanvas from './uti/useCanvas'
 
 const Canvas = props => {
     const {draw, options, ...rest} = props
